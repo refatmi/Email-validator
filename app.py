@@ -1,8 +1,12 @@
 from flask import Flask, request, jsonify
 import smtplib
 import dns.resolver
+from flask_cors import CORS  # Import CORS
 
 app = Flask(__name__)
+
+# Enable CORS for all routes
+CORS(app)
 
 def check_email_smtp(email):
     domain = email.split('@')[-1]
